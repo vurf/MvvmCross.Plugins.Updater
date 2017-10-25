@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCross.Plugins.Updater", "MvvmCross.Plugins.Updater\MvvmCross.Plugins.Updater.csproj", "{1CF8C6BA-862A-4419-BA43-03268FF5AD39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCross.Plugins.Updater.iOS", "MvvmCross.Plugins.Updater.iOS\MvvmCross.Plugins.Updater.iOS.csproj", "{80AB06FD-69EB-4C6A-AC52-940FED4339D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCross.Plugins.Updater.Droid", "MvvmCross.Plugins.Updater.Droid\MvvmCross.Plugins.Updater.Droid.csproj", "{E338A6D4-455E-4B73-B0E5-F133440BEDC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CF8C6BA-862A-4419-BA43-03268FF5AD39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CF8C6BA-862A-4419-BA43-03268FF5AD39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CF8C6BA-862A-4419-BA43-03268FF5AD39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CF8C6BA-862A-4419-BA43-03268FF5AD39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80AB06FD-69EB-4C6A-AC52-940FED4339D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80AB06FD-69EB-4C6A-AC52-940FED4339D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80AB06FD-69EB-4C6A-AC52-940FED4339D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80AB06FD-69EB-4C6A-AC52-940FED4339D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E338A6D4-455E-4B73-B0E5-F133440BEDC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E338A6D4-455E-4B73-B0E5-F133440BEDC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E338A6D4-455E-4B73-B0E5-F133440BEDC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E338A6D4-455E-4B73-B0E5-F133440BEDC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
