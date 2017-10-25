@@ -13,7 +13,7 @@
     {
         private const string VersionPattern = @"(?<=<div class=""content"" itemprop=""softwareVersion"">)(.+?)(?=</div>)";
         private const string WhatsNewPattern = @"(?<=<div class=""recent-change"">)(.+?)(?=</div>)";
-        private const string ApplicationNamePattern = @"(?<=<div class=""id-app-title"">)(.+?)(?=</div>)";
+        private const string ApplicationNamePattern = @"(?<=<div class=""id-app-title"" tabindex=""0"">)(.+?)(?=</div>)";
         private Context _context;
 
         private Context Context

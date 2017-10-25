@@ -7,7 +7,7 @@
     using ModernHttpClient;
     using Newtonsoft.Json;
 
-    [Preserve(AllMembers = true)]
+    [Updater.Preserve(AllMembers = true)]
     public class MvxUpdaterHelper : IMvxUpdaterHelper
     {
         private NSDictionary _info;
@@ -28,7 +28,7 @@
             {
                 var response = await this.GetResponse();
                 var jsonObject = JsonConvert.DeserializeObject<dynamic>(response.Content);
-                var appstoreVersion = new Version(jsonObject.results[0].version.ToString());
+                var appstoreVersion = new Version(jsonObject?.results[0]?.version?.ToString());
                 var currentVersion = Version.Parse(this.Info["CFBundleShortVersionString"].ToString());
 
                 return currentVersion < appstoreVersion;
@@ -41,22 +41,29 @@
 
         public async Task<MvxApplicationModel> GetInfoApplication()
         {
-            var response = await this.GetResponse();
-            var jsonObject = JsonConvert.DeserializeObject<dynamic>(response.Content);
-            var resultInfo = jsonObject.results[0];
-            var storeVersion = new Version(resultInfo.version.ToString());
-            var storeWhatsNew = resultInfo.releaseNotes.ToString();
-            var storeName = resultInfo.trackCensoredName.ToString();
-            var currentVersion = Version.Parse(this.Info["CFBundleShortVersionString"].ToString());
-            
-            return new MvxApplicationModel()
+            try
             {
-                Name = storeName,
-                Version = storeVersion,
-                WhatsNew = storeWhatsNew,
-                Url = response.Url,
-                UpdateAvailable = storeVersion > currentVersion
-            };
+                var response = await this.GetResponse();
+                var jsonObject = JsonConvert.DeserializeObject<dynamic>(response.Content);
+                var resultInfo = jsonObject?.results[0];
+                var storeVersion = new Version(resultInfo.version.ToString());
+                var storeWhatsNew = resultInfo.releaseNotes.ToString();
+                var storeName = resultInfo.trackCensoredName.ToString();
+                var currentVersion = Version.Parse(this.Info["CFBundleShortVersionString"].ToString());
+
+                return new MvxApplicationModel()
+                {
+                    Name = storeName,
+                    Version = storeVersion,
+                    WhatsNew = storeWhatsNew,
+                    Url = response.Url,
+                    UpdateAvailable = storeVersion > currentVersion
+                };
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
         
         private async Task<MvxResponseModel> GetResponse()
